@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="OceanEnvironment/jquery.js"></script>
+<!--    <script type="text/javascript" src="OceanEnvironment/echarts.min.js"></script>-->
+    <script type="text/javascript" src="OceanEnvironment/PlasticinOcean/js/echarts.min.js"></script>
+    <link rel="stylesheet" href="OceanEnvironment/PlasticinOcean/css/style.css">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.css" rel="stylesheet">
+    <script type="text/javascript" src="OceanEnvironment/PlasticinOcean/js/js.js"></script>
+    <script type="text/javascript" src="OceanEnvironment/PlasticinOcean/js/plastic.js"></script>
+
+    <title>海洋中的塑料</title>
+    <link rel="shortcut icon" href="DataBrowsing/favicon.ico">
+
+</head>
+
+<body>
+
+<div class="background">
+    <!-- 这里放置整个页面的内容 -->
+</div>
+<div class="menu-wrap">
+    <ul class="menu">
+        <li class="item">
+            <a class="item-inner" href="#item1"><span class="txt">各大洲数据</span></a>
+        </li>
+        <li class="item">
+            <a class="item-inner" href="#item2"><span class="txt">海区污染</span></a>
+        </li>
+        <li class="item">
+            <a class="item-inner" href="#item3"><span class="txt">塑料占比</span></a>
+        </li>
+        <li class="item">
+            <a class="item-inner" href="#item4"><span class="txt">流入海洋</span></a>
+        </li>
+        <li class="item">
+            <a class="item-inner" href="#item5"><span class="txt">塑料年产量</span></a>
+        </li>
+
+
+    </ul>
+</div>
+
+<div class="content">
+    <section class="sec" id="item1">
+
+        <div class="sec-body" style="height: 620px; right: -20px;" id="echart5"></div>
+        <h2 class="sec-head">各大洲不同种类塑料垃圾占比</h2>
+    </section>
+    <section class="sec" id="item2">
+        <h2 class="sec-head">主要海区受到的污染</h2>
+        <div class="sec-body" style="height: 620px;" id="echart3">
+        </div>
+    </section>
+    <section class="sec" id="item3">
+
+        <div class="sec-body" style="height: 620px;" id="echart4"></div>
+        <h2 class="sec-head">塑料垃圾在海洋垃圾中所占比例</h2>
+    </section>
+    <section class="sec" id="item4">
+        <h2 class="sec-head">大约0.5%的塑料垃圾最终流入海洋</h2>
+        <div class="sec-body" style="height: 620px;" id="echart1">
+        </div>
+
+    </section>
+    <section class="sec" id="item5">
+        <h2 class="sec-head">1950年至2019年全球塑料年产量</h2>
+        <div class="sec-body" style="height: 620px;" id="echart2">
+        </div>
+
+    </section>
+</div>
+<div class="button-menu">
+    <a href="ChinaCatalogue.html" class="button"><i class="fa-brands fa-watchman-monitoring" style="font-size: 70px;"></i><span>我国水域<br>监测</span></a>
+    <hr class="menu-divider">
+    <a href="cu.html" class="button"><i class="fa-solid fa-earth-asia" style="font-size: 70px;"></i><span>全球生态<br>可视化</span></a>
+    <hr class="menu-divider">
+    <a href="environment.html" class="button"><i class="fa-solid fa-fish-fins" style="font-size: 70px;"></i><span>海洋保护</span></a>
+    <hr class="menu-divider">
+    <a href="Caculate.html" class="button"><i class="fa-solid fa-shoe-prints" style="font-size: 70px; margin-top: -10px;"></i><span>塑料足迹</span></a>
+    <hr class="menu-divider">
+    <a href="#" class="button" onclick="redirectToExternalLink()"><i class="fa-solid fa-magnifying-glass" style="font-size: 70px; margin-top: -30px;"></i><span>鱼种识别</span></a>
+</div>
+
+<script>
+    function redirectToExternalLink() {
+        window.location.href = "http://www.wocean.xyz/";
+    }
+</script>
+</body>
+</html>

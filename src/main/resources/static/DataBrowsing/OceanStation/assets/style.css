@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #fff;
+    font-size: 16px;
+    background:#003bc9; background: linear-gradient(to bottom right, #003bc9, #023ac2 , #021341);
+    background-size: 100% 100%;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+/* 导航栏*/
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    background: rgba(0,0,0,.2);
+    z-index: 2000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.logo{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    color: #fffefe;
+    text-decoration: none;
+    font-weight: 700;
+}
+.logo span{
+    color: #1e72c7;
+
+}
+.submit {
+    font-size: 18px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+li {
+    list-style-type: none;
+}
+.clearfix:after, .clearfix:before {
+    display: table;
+    content: " "
+}
+
+.clearfix:after {
+    clear: both
+}
+.mainbox {
+    top: 50px;
+    position: relative; /* 设置相对定位，以便绝对定位子元素相对于其定位 */
+    margin-top: 50px;
+}
+
+.nav1>li {
+    position: absolute; /* 设置绝对定位 */
+}
+
+.nav1>li:nth-child(1) {
+    left: 30px; /* 左侧列左对齐 */
+}
+
+.nav1>li:nth-child(2) {
+    left: 50%; /* 将中间列定位到页面中间 */
+    transform: translateX(-50%); /* 水平居中 */
+    z-index: 1;
+}
+
+.nav1>li:nth-child(3) {
+    right: 30px; /* 右侧列右对齐 */
+}
+
+.boxnav.mapc {
+    position: relative; /* 设置相对定位 */
+    z-index: -1; /* 将地图容器的层级设为负值，使其位于其他内容下面 */
+}
+
+.boxnav.mapc .echarts-map {
+    position: absolute; /* 设置绝对定位 */
+    top: 0;
+    left: 0;
+    width: 1200px;
+    height: 900px;
+}
+
+.box {
+    /*border: 1px solid rgba(7, 118, 181, .5);*/
+    /*box-shadow: inset 0 0 10px rgba(7, 118, 181, .4);*/
+    /*border: none;*/
+    /*background: linear-gradient(to bottom, #FFFFFF, #618ecb);*/
+    margin-bottom: 20px;
+    position: relative;
+    margin-left: 0;
+
+    background: rgba(0,0,0,.2);
+    /*padding:15px;*/
+    /*margin-bottom:15px;*/
+}
+
+.tit1 {
+    padding: 10px 10px 10px 25px;
+    border-bottom: 1px solid rgba(0, 157, 255, 0.84);
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    /*color: #597fa1;*/
+    color:#fff;
+}
+.box:before {
+    width: 100%;
+    height: 1px;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    /*background: linear-gradient(to right, #076ead, #4ba6e0, #076ead);*/
+    /*box-shadow: 0 0 5px rgba(131, 189, 227, 1);*/
+    /*opacity: .6*/
+}
+
+.box:before {
+    top: -1px;
+}
+
+.boxnav {
+    padding: 0;
+}
+.mapc {
+    background-size: 100% 100%;
+}
+
+.echarts-map {
+    position: relative;
+    left: 0;
+    right: 0;
+    width: 80vw;
+    height: 100vh;
+}
+.mapnav {
+    position: absolute;
+    z-index: 10;
+}
+
+.yqlist li {
+    float: left;
+    width: 50%;
+    padding: 10px 0;
+    text-align: center;
+}
+/*https://pixabay.com/zh/vectors/wave-water-ocean-backdrop-motion-30540!*/
+
+.yq {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 5px auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    /*font-family: electronicFont;*/
+    color: #022e69;
+}
+
+.yqlist li span {
+    /*opacity: .6;*/
+    font-size: 10px;
+    color: white;
+}
+
+.yq:before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: url(img1.png) center center;
+    border-radius: 100px;
+    background-size: 100% 100%;
+    opacity: .3;
+    left: 0;
+    top: 0;
+    animation: myfirst2 15s infinite linear;
+}
+
+.yq:after {
+    position: absolute;
+    width: 86%;
+    background: url(img2.png) center center;
+    border-radius: 100px;
+    background-size: 100% 100%;
+    opacity: .6;
+    height: 86%;
+    content: "";
+    left: 7%;
+    top: 7%;
+    animation: myfirst 15s infinite linear;
+}
+.slide-title {
+    background: rgb(0, 80, 189, .5);
+    color: #fff;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.slide-title span {
+    float: left;
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+    margin: 0 5px; /* 调整点之间的水平间距 */
+}
+.slide-title span:nth-child(1),
+.slide-list li span:nth-child(1){
+    width: 60px;
+}
+.slide-title span:nth-child(2),
+.slide-list li span:nth-child(2){
+    width: 60px;
+    margin-right: 30px;
+}
+.slide-title span:nth-child(3),
+.slide-list li span:nth-child(3){
+    width: 60px;
+
+}
+.slide-title span:nth-child(4),
+.slide-list li span:nth-child(4){
+    width: 70px;
+    /*margin-right: 70px;*/
+}
+.slide-title span:nth-child(5),
+.slide-list li span:nth-child(5){
+    width: 60px;
+}
+/*.slide-title span:nth-child(6),*/
+/*.slide-list li span:nth-child(6){*/
+/*	width: 60px;*/
+/*}*/
+.slide-container {
+    position: relative;
+    overflow: hidden;
+    height: 525px;
+}
+.slide-list {
+    display: inline-block;
+    position: absolute;
+    width: 600%;
+    left: 0;
+    top: 0;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.5s ease;
+}
+.slide-list li {
+    height:30px;
+    line-height:30px;
+    list-style:none;
+    margin:0;
+    padding:0 10px;
+}
+
+.slide-list li span {
+    display:inline-block;
+    margin-right:14px;
+    font-size:12px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+.slide-list li.odd {
+    background: rgba(255, 255, 255, 0.3);
+}
+.slide-list li.even {
+    background: rgba(6, 47, 91, 0.69);
+}
+.polar-container{
+    position: relative;
+    overflow: hidden;
+    height: 390px;
+}
+
+
+.item9 {
+    left: 5px;
+    top: 15px;
+    right:5px;
+    bottom: 15px;
+    border-radius: 20px;
+    padding-top: 0;
+    /*background-size: 4px 20px, 20px 4px, 4px 20px, 20px 4px;*/
+    /*border: 1px solid #073F97;*/
+    position: relative;
+}

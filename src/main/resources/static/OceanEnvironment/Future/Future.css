@@ -1,0 +1,293 @@
+*,
+body,
+html{
+    margin: 0;
+    padding: 0;
+}
+/* Responsive */
+@media only screen and (max-width: 767px) {
+    .timeline:before {
+        left: 40px;
+    }
+    .timeline-item {
+        align-self: baseline !important;
+        width: 100%;
+        padding: 0 30px 150px 80px;
+    }
+    .timeline-item:before {
+        left: 10px !important;
+        padding: 0 !important;
+        top: 50px;
+        text-align: center !important;
+        width: 60px;
+        border: none !important;
+    }
+    .timeline-item:last-child {
+        padding-bottom: 40px;
+    }
+}
+
+.timeline {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 800px;
+    position: relative;
+}
+
+.timeline__content-title {
+    font-weight: normal;
+    font-size: 66px;
+    margin: -10px 0 0 0;
+    transition: .4s;
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-family: 'Pathway Gothic One', sans-serif;
+    color: #fff;
+}
+
+.timeline__content-desc {
+    margin: 0;
+    font-size: 30px;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, .9);
+    font-family: Cardo;
+    font-weight: normal;
+    line-height: 35px;
+}
+
+.timeline:before {
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    margin-left: -1px;
+    content: "";
+    background: rgba(255, 255, 255, .07);
+}
+
+.timeline-item {
+    padding: 40px 0;
+    opacity: .3;
+    filter: blur(2px);
+    transition: .5s;
+    box-sizing: border-box;
+    width: calc(50% - 40px);
+    display: flex;
+    position: relative;
+    transform: translateY(-80px);
+}
+
+.timeline-item:before {
+    content: attr(data-text);
+    letter-spacing: 3px;
+    width: 100%;
+    position: absolute;
+    color: rgba(255, 255, 255, .8);
+    font-size: 80px;
+    font-weight: bold;
+    font-family: 'Pathway Gothic One', sans-serif;
+    border-left: 2px solid rgba(255, 255, 255, .8);
+    top: 70%;
+    margin-top: -5px;
+    padding-left: 15px;
+    opacity: 0;
+    right: calc(-100% - 56px);
+}
+
+.timeline-item:nth-child(even) {
+    align-self: flex-end;
+}
+
+.timeline-item:nth-child(even):before {
+    right: auto;
+    text-align: right;
+    left: calc(-100% - 56px);
+    padding-left: 0;
+    border-left: none;
+    border-right: 2px solid rgba(255, 255, 255, .5);
+    padding-right: 15px;
+}
+
+.timeline-item--active {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+}
+
+.timeline-item--active:before {
+    top: 50%;
+    transition: .3s all .2s;
+    opacity: 1;
+}
+
+.timeline__img {
+    max-width: 100%;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .4);
+}
+
+.timeline-container {
+    width: 100%;
+    position: relative;
+    padding: 80px 0;
+    transition: .3s ease 0s;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.timeline-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.61);
+}
+.timeline-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.timeline-header__title {
+    color: #fff;
+    font-size: 55px;
+    font-family: Cardo;
+    font-weight: normal;
+    margin: 0;
+}
+
+.timeline-header__subtitle {
+    color: rgba(255, 255, 255, .5);
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 25px;
+    letter-spacing: 5px;
+    margin: 10px 0 0 0;
+    font-weight: normal;
+}
+/*导航栏*/
+@keyframes checked-anim {
+    50% {
+        width: 3000px;
+        height: 3000px;
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+@keyframes not-checked-anim {
+    0% {
+        width: 3000px;
+        height: 3000px;
+    }
+}
+li, a {
+    padding: 3px 0;
+    margin: 75px 0 -55px 0;
+    color: #03A9F4;
+    font: 30pt "Roboto", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.2;
+    text-decoration: none;
+    text-transform: none;
+    list-style: none;
+    outline: 0;
+    display: none;
+}
+li {
+    width: 100vw;
+    text-indent: 10px;
+}
+li a:hover {
+    background-color: #0e376c;
+    border-radius: 50px;
+}
+a:focus {
+    display: block;
+    color: #333;
+    background-color: rgba(0, 157, 255, 0.84);
+    transition: all .5s;
+}
+
+#trigger, #burger, #burger:before, #burger:after {
+    position: fixed;
+    top: 55px;
+    left: 25px;
+    background: #03A9F4;
+    width: 30px;
+    height: 5px;
+    transition: .2s ease;
+    cursor: pointer;
+    z-index: 1;
+}
+#trigger {
+    height: 25px;
+    background: none;
+}
+#burger:before {
+    content: " ";
+    top: 35px;
+    left: 25px;
+}
+#burger:after {
+    content: " ";
+    top: 45px;
+    left: 25px;
+}
+#menu-toggle:checked + #trigger + #burger {
+    top: 35px;
+    transform: rotate(180deg);
+    transition: transform .2s ease;
+}
+
+#menu-toggle:checked + #trigger + #burger:before {
+    width: 20px;
+    top: -2px;
+    left: 18px;
+    transform: rotate(45deg) translateX(-5px);
+    transition: transform .2s ease;
+}
+#menu-toggle:checked + #trigger + #burger:after {
+    width: 20px;
+    top: 2px;
+    left: 18px;
+    transform: rotate(-45deg) translateX(-5px);
+    transition: transform .2s ease;
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 110px;
+    height: 110px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom-right-radius: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+    animation: not-checked-anim .2s both;
+    transition: .2s;
+}
+
+
+#menu-toggle:checked + #trigger + #burger + #menu {
+    animation: checked-anim 1s ease both;
+}
+#menu-toggle:checked + #trigger ~ #menu > li, a {
+    display: block;
+}
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    display: none;
+}
+
+.current {
+    background-color: rgba(0, 157, 255, 0.84);
+    color: #FFFFFF;
+    border-radius: 50px;
+}

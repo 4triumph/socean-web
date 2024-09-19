@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="zh_TW">
+
+    <head>
+        <title>塑料足迹</title>
+        <link rel="shortcut icon" href="DataBrowsing/favicon.ico">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+        <meta charset="utf-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <link href="OceanEnvironment/Caculate/css/bootstrap.min.css" rel="stylesheet">
+        <link href="OceanEnvironment/Caculate/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="OceanEnvironment/Caculate/css/style.css">
+        <!--[if lt IE 9]>
+        <script src="OceanEnvironment/Caculate/js/html5shiv.min.js"></script>
+        <![endif]-->
+        <script src="OceanEnvironment/Caculate/js/jquery.min.js" type="text/javascript"></script>
+        <script src="OceanEnvironment/Caculate/js/bootstrap.min.js"></script>
+        <script src="OceanEnvironment/Caculate/js/eeeee.js"></script>
+        <script src="OceanEnvironment/Caculate/js/jquery.scrollTo.min.js"></script>
+        <script src="OceanEnvironment/Caculate/js/jquery.validate.min.js">
+        </script>
+        <script src="OceanEnvironment/Caculate/js/jquery.waypoints.min.js"></script>
+<!--        <link href="https://fonts.googleapis.com/css?family=Pinyon+Script" rel="stylesheet">-->
+        <link rel="stylesheet" type="text/css" href="OceanEnvironment/Caculate/css/styles.css">
+    </head>
+    <body>
+    <header class="head">
+        <a href="#" class="logo">海洋<span>之窗</span></a>
+        <nav class="nav">
+            <a href="index.html" class="menu-item">主页</a>
+            <a href="ChinaCatalogue.html" class="menu-item">我国水域监测</a>
+            <a href="cu.html" class="menu-item">全球生态可视化</a>
+            <a href="environment.html" class="menu-item">海洋保护</a>
+            <a href="SeawaterMonitoring.html" class="menu-item active">塑料足迹</a>
+            <a href="#" class="menu-item" onclick="redirectToExternalLink()">鱼种识别</a>
+        </nav>
+    </header>
+    <div class="container-fluid" id="slide-container">
+            <div class="slide row" id="slide1" style="padding-top: 100px;">
+                <div class="col-md-8 col-md-offset-2 col-sm-12 hazed-container">
+                    <div id="progress-bar-container">
+                        <div id="progress-bar">
+                            <ul>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress progress-active">1</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress">2</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress">3</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress">4</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress">5</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress">6</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress">7</span></span>
+                                </li>
+                                <li>
+                                    <span class="pre-progress-container"><span class="pre-progress">8</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3>
+                        <span class="">请问你平均一周使用多少塑料饮料杯？ </span>
+                        (手摇杯/塑料杯)
+
+                        <!-- Modal ----------------start -->
+                        <div class="modal fade" id="myModal_01" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">                                  
+                                    <div class="modal-body">
+                                        <img class="common_img" src="OceanEnvironment/Caculate/img/s01.png" />
+                                    </div>
+                                    <div class="modal-footer"> 
+                                        <button type="button" class="button save-data next" data-dismiss="modal">知道了</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal ----------------end -->
+                    </h3>
+                    <div class="row">
+                        <img class="plastic_img" src="OceanEnvironment/Caculate/img/11.jpg" />
+
+                    </div>
+                    <div class="input-icons">
+                        <select class="form-control" name="q1">
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                            <option value="13">13</option>
+                                                            <option value="14">14</option>
+                                                            <option value="15">15</option>
+                                                            <option value="16">16</option>
+                                                            <option value="17">17</option>
+                                                            <option value="18">18</option>
+                                                            <option value="19">19</option>
+                                                            <option value="20">20</option>
+                             
+                        </select> 
+                    </div>
+                    <button type="button" class="button" data-toggle="modal" data-target="#myModal_01">下一题</button>
+                </div>
+            </div>
+            <div class="slide row" id="slide3">
+                <div class="col-md-8 col-md-offset-2 col-sm-12 hazed-container">
+                    <div id="progress-bar-container">
+                        <div id="progress-bar">
+                            <ul>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">1</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress progress-active">2</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress">3</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress">4</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress">5</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress">6</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress">7</span></span>
+                                </li>
+                                <li>
+                                    <span class="pre-progress-container"><span class="pre-progress">8</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3 class="">请问你平均一周使用多少塑料饮料瓶？（包括塑料果汁瓶、宝特瓶等）
+                        <!-- Modal ----------------start -->
+                        <div class="modal fade" id="myModal_02" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <img class="common_img" src="OceanEnvironment/Caculate/img/s02.png" />
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="button save-data next" data-dismiss="modal">知道了</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal ----------------end -->
+
+                    </h3>
+                    <div class="row">
+                        <img class="plastic_img" src="OceanEnvironment/Caculate/img/22.jpg" />
+
+                    </div>
+                    <div class="input-icons">
+
+                        <select class="form-control" name="q2">
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                            <option value="13">13</option>
+                                                            <option value="14">14</option>
+                                                            <option value="15">15</option>
+                                                            <option value="16">16</option>
+                                                            <option value="17">17</option>
+                                                            <option value="18">18</option>
+                                                            <option value="19">19</option>
+                                                            <option value="20">20</option>
+
+                        </select>
+
+                    </div>
+                    <button type="button" class="button" data-toggle="modal" data-target="#myModal_02">下一题</button>
+                </div>
+            </div>
+            <div class="slide row" id="slide4">
+                <div class="col-md-8 col-md-offset-2 col-sm-12 hazed-container">
+                    <div id="progress-bar-container">
+                        <div id="progress-bar">
+                            <ul>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">1</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">2</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress progress-active">3</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress">4</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress">5</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress">6</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress">7</span></span>
+                                </li>
+                                <li>
+                                    <span class="pre-progress-container"><span class="pre-progress">8</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3><span class="">请问你平均一周会使用多少根吸管？</span>
+                        <!-- Modal ----------------start -->
+                        <div class="modal fade" id="myModal_03" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <img class="common_img" src="OceanEnvironment/Caculate/img/s03.png" />
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="button save-data next" data-dismiss="modal">知道了</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal ----------------end -->
+                    </h3>
+                    <div class="row">
+                        <img class="plastic_img_2" src="OceanEnvironment/Caculate/img/33.jpg" />
+
+                    </div>
+                    <div class="input-icons">
+                        <select class="form-control"  name="q3">
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                            <option value="13">13</option>
+                                                            <option value="14">14</option>
+                                                            <option value="15">15</option>
+                                                            <option value="16">16</option>
+                                                            <option value="17">17</option>
+                                                            <option value="18">18</option>
+                                                            <option value="19">19</option>
+                                                            <option value="20">20</option>
+
+                        </select>
+
+                    </div>
+                    <button type="button" class="button" data-toggle="modal" data-target="#myModal_03">下一题</button>
+                </div>
+            </div>
+            <div class="slide row" id="slide5">
+                <div class="col-md-8 col-md-offset-2 col-sm-12 hazed-container hidden-extra-field">
+                    <div id="progress-bar-container">
+                        <div id="progress-bar">
+                            <ul>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">1</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">2</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">3</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress progress-active">4</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress">5</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress">6</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress">7</span></span>
+                                </li>
+                                <li>
+                                    <span class="pre-progress-container"><span class="pre-progress">8</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3 class="">
+                        请问你平均一周使用多少个盛装外带食物的塑料盒？（包括微波餐盒、水果盒、便利店沙拉盒等一次性塑料盒）
+                        <!-- Modal ----------------start -->
+                        <div class="modal fade" id="myModal_04" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">                                  
+                                    <div class="modal-body">
+                                        <img class="common_img" src="OceanEnvironment/Caculate/img/s04.png" />
+                                    </div>
+                                    <div class="modal-footer"> 
+                                        <button type="button" class="button save-data next" data-dismiss="modal">知道了</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal ----------------end -->
+                    </h3>
+                    <div class="row">
+                        <img class="plastic_img_3" src="OceanEnvironment/Caculate/img/44.jpg" />
+
+                    </div>
+                    <div class="input-icons">
+                        <select class="form-control"  name="q4">
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                            <option value="13">13</option>
+                                                            <option value="14">14</option>
+                                                            <option value="15">15</option>
+                                                            <option value="16">16</option>
+                                                            <option value="17">17</option>
+                                                            <option value="18">18</option>
+                                                            <option value="19">19</option>
+                                                            <option value="20">20</option>
+                             
+                        </select>
+                    </div>
+                    <br>   <button type="button" class="button" data-toggle="modal" data-target="#myModal_04">下一题</button>
+                </div>
+            </div>
+            <div class="slide row" id="slide6">
+                <div class="col-md-8 col-md-offset-2 col-sm-12 hazed-container">
+                    <div id="progress-bar-container">
+                        <div id="progress-bar">
+                            <ul>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">1</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">2</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">3</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">4</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress progress-active">5</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress">6</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress">7</span></span>
+                                </li>
+                                <li>
+                                    <span class="pre-progress-container"><span class="pre-progress">8</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3 class="">
+                        请问你平均一周使用多少盛装食物的塑料袋？（外卖族使用盛装外带食物的塑料袋；自己在家煮饭者将没有吃完/煮完的食物用塑料袋盛装储存？）（不包括重复使用的塑料袋）
+
+                        <div class="modal fade" id="myModal_05" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">                                  
+                                    <div class="modal-body">
+                                        <img class="common_img" src="OceanEnvironment/Caculate/img/s05.png" />
+                                    </div>
+                                    <div class="modal-footer"> 
+                                        <button type="button" class="button save-data next" data-dismiss="modal">知道了</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </h3>
+                    <div class="row">
+
+                        <img class="plastic_img_3" src="OceanEnvironment/Caculate/img/55.jpg" />
+
+                    </div>
+                    <div class="input-icons">
+                        <select class="form-control"  name="q5">
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                            <option value="13">13</option>
+                                                            <option value="14">14</option>
+                                                            <option value="15">15</option>
+                                                            <option value="16">16</option>
+                                                            <option value="17">17</option>
+                                                            <option value="18">18</option>
+                                                            <option value="19">19</option>
+                                                            <option value="20">20</option>
+                             
+                        </select>
+                    </div>
+                    <button type="button" class="button" data-toggle="modal" data-target="#myModal_05">下一题</button>
+                </div>
+            </div>
+            <div class="slide row" id="slide7">
+                <div class="col-md-8 col-md-offset-2 col-sm-12 hazed-container">
+                    <div id="progress-bar-container">
+                        <div id="progress-bar">
+                            <ul>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">1</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">2</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">3</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">4</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">5</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress progress-active">6</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress">7</span></span>
+                                </li>
+                                <li>
+                                    <span class="pre-progress-container"><span class="pre-progress">8</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3>
+                        请问你平均一周使用多少塑料餐具？（包括：免洗筷的塑料外包装、塑料汤匙、塑料碗、塑料刀、塑料叉、塑料盘？）
+                        <div class="modal fade" id="myModal_06" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">                                  
+                                    <div class="modal-body">
+                                        <img class="common_img" src="OceanEnvironment/Caculate/img/s06.png" />
+                                    </div>
+                                    <div class="modal-footer"> 
+                                        <button type="button" class="button save-data next" data-dismiss="modal">知道了</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </h3>
+                    <div class="row">
+                        <img class="plastic_img_3" src="OceanEnvironment/Caculate/img/66.jpg" />
+
+                    </div>
+                    <div class="input-icons">
+                        <select class="form-control"  name="q6">
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                            <option value="13">13</option>
+                                                            <option value="14">14</option>
+                                                            <option value="15">15</option>
+                                                            <option value="16">16</option>
+                                                            <option value="17">17</option>
+                                                            <option value="18">18</option>
+                                                            <option value="19">19</option>
+                                                            <option value="20">20</option>
+                             
+                        </select>
+                    </div>
+                    <button type="button" class="button" data-toggle="modal" data-target="#myModal_06">下一题</button>
+                </div>
+            </div>
+            <div class="slide row" id="slide8">
+                <div class="col-md-8 col-md-offset-2 col-sm-12 hazed-container">
+                    <div id="progress-bar-container">
+                        <div id="progress-bar">
+                            <ul>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">1</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">2</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">3</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">4</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">5</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">6</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr"><span class="pre-progress-container"><span class="pre-progress progress-active">7</span></span>
+                                </li>
+                                <li>
+                                    <span class="pre-progress-container"><span class="pre-progress">8</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3>请问你平均一周使用多少个购物塑料袋？（包括装载日用品、蔬菜水果的塑料袋）（不包括重复使用的塑料袋）
+                        <span class="bold"></span>
+                        <div class="modal fade" id="myModal_07" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">                                  
+                                    <div class="modal-body">
+                                        <img class="common_img" src="OceanEnvironment/Caculate/img/s07.png" />
+                                    </div>
+                                    <div class="modal-footer"> 
+                                        <button type="button" class="button save-data next" data-dismiss="modal">知道了</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </h3>
+                    <div class="row">
+                        <img class="plastic_img_3" src="OceanEnvironment/Caculate/img/77.jpg" />
+
+                    </div>
+                    <div class="input-icons">
+                        <select class="form-control"  name="q7">
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                            <option value="13">13</option>
+                                                            <option value="14">14</option>
+                                                            <option value="15">15</option>
+                                                            <option value="16">16</option>
+                                                            <option value="17">17</option>
+                                                            <option value="18">18</option>
+                                                            <option value="19">19</option>
+                                                            <option value="20">20</option>
+                             
+                        </select>
+                    </div>
+                    <button type="button" class="button" data-toggle="modal" data-target="#myModal_07">下一题</button>
+                </div>
+            </div>
+            <div class="slide row" id="slide9">
+                <div class="col-md-8 col-md-offset-2 col-sm-12 hazed-container">
+                    <div id="progress-bar-container">
+                        <div id="progress-bar">
+                            <ul>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">1</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">2</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">3</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">4</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">5</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">6</span></span>
+                                </li>
+                                <li>
+                                    <hr class="progress-hr progress-hr-blue"><span class="pre-progress-container"><span class="pre-progress progress-active">7</span></span>
+                                </li>
+                                <li>
+                                    <span class="pre-progress-container"><span class="pre-progress progress-active">8</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3>请问你平均一周大约使用多少个食品包装塑料袋？（如糖果、饼干、零食...以个数计算）
+                        <div class="modal fade" id="myModal_08" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">                                  
+                                    <div class="modal-body">
+                                        <img class="common_img" src="OceanEnvironment/Caculate/img/081.png" />
+                                    </div>
+                                    <div class="modal-footer"> 
+                                        <button type="button " onclick="save_data();"   class="button calculate save-data  " data-dismiss="modal">知道了</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </h3>
+                    <div class="row">
+
+                        <img class="plastic_img_3" src="OceanEnvironment/Caculate/img/88.jpg" />
+
+                    </div>
+                    <div class="input-icons">
+                        <select class="form-control"  name="q8">
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                            <option value="13">13</option>
+                                                            <option value="14">14</option>
+                                                            <option value="15">15</option>
+                                                            <option value="16">16</option>
+                                                            <option value="17">17</option>
+                                                            <option value="18">18</option>
+                                                            <option value="19">19</option>
+                                                            <option value="20">20</option>
+                             
+                        </select>
+                    </div>
+                    <button type="button" class="button" data-toggle="modal" data-target="#myModal_08">看结果</button>
+
+                </div>
+            </div>
+            <div class="slide row" id="res_05">
+                <h3 id="res_title_01" style="display: none;">
+                    减塑高手：生活中，你是个“少塑”清流，做得好！继续加油！
+                </h3>
+                <h3 id="res_title_02" style="display: none;">
+                    减塑新手：小伙伴，你需要加油了，少喝点饮料、少吃点零食吧！
+                </h3>
+                <h3 id="res_title_03" style="display: none;">
+                    "嗑塑狂魔：你..你..你嗑掉太多塑料了吧? 要“塑身”，不要“塑料”啊！"
+                </h3>
+                <table class="table table-bordered res_table">
+                    <tr class="title">
+                        <td colspan="4">
+                            塑料足迹计算结果
+                        </td>
+                    </tr>
+                    <tr class="header" > 
+                        <td style="width:5%;"></td>
+                        <td style="width:28%;">图示</td>
+                        <td style="width:10%;">数量</td>
+                        <td style="width:35%;">建议</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <img class="plastic_img" src="OceanEnvironment/Caculate/img/11.jpg" />
+                        </td>
+                        <td  class="content" >
+                            <span id="res_q1_sum">52</span>
+                        </td>
+                        <td id="res_q1_adv" class="res_adv" style="
+
+                            "> <span class="Red">減量</span> 自备随身杯，减少塑料杯使用。</td>
+                    </tr>
+                    <tr class="odd  ">
+                        <td>2</td>
+                        <td>
+
+                            <img class="plastic_img" src="OceanEnvironment/Caculate/img/22.jpg" />
+                        </td>
+                        <td  class="content" >
+                            <span id="res_q2_sum">52</span>
+                        </td>
+                        <td id="res_q2_adv"  class="res_adv" style="
+
+                            "><span class="Red">减少和回收</span>自备水壶少买瓶装水。记得回收宝特瓶。</td>
+                    </tr>
+                    <tr  class=" ">
+                        <td>3</td>
+                        <td>
+                            <img class="plastic_img" src="OceanEnvironment/Caculate/img/33.jpg" />
+                        </td>
+                        <td  class="content" >
+                            <span id="res_q3_sum">52</span>
+                        </td>
+                        <td id="res_q3_adv"  class="res_adv" style="
+
+                            "><span class="Red">拒用 </span>能不用吸管就不用！</td>
+                    </tr>
+                    <tr class="odd  ">
+                        <td>4</td>
+                        <td>
+                            <img class="plastic_img" src="OceanEnvironment/Caculate/img/44.jpg" />
+                        </td>
+                        <td  class="content" >
+                            <span id="res_q4_sum">52</span>
+                        </td>
+                        <td id="res_q4_adv"  class="res_adv" style="
+
+                            "><span class="Red">減量 </span>尽量少使用塑料盒，可自备餐具盛装食物。</td>
+                    </tr>
+                    <tr  class=" ">
+                        <td>5</td>
+                        <td>  
+
+                            <img class="plastic_img" src="OceanEnvironment/Caculate/img/55.jpg" />
+                        </td>
+                        <td  class="content" >
+                            <span id="res_q5_sum">52</span>
+                        </td>
+                        <td id="res_q5_adv"  class="res_adv" style="
+
+                            "><span class="Red">減量 </span>尽量少用塑料袋装食物，还可减少食物接触到塑化剂。</td>
+                    </tr>
+                    <tr class="odd  ">
+                        <td>6</td>
+                        <td>
+                            <img class="plastic_img" src="OceanEnvironment/Caculate/img/66.jpg" />
+                        </td>
+                        <td  class="content" >
+                            <span id="res_q6_sum">52</span>
+                        </td>
+                        <td id="res_q6_adv"  class="res_adv" style=""><span class="Red">拒用  </span>自备环保餐具，减少接触到塑化剂。</td>
+                    </tr>
+                    <tr  class=" "> 
+                        <td>7</td>
+                        <td>
+                            <img class="plastic_img" src="OceanEnvironment/Caculate/img/77.jpg" />
+                        </td>
+                        <td  class="content" >
+                            <span id="res_q7_sum">52</span>
+                        </td>
+                        <td id="res_q7_adv"  class="res_adv" style="
+
+                            "><span class="Red">再用 </span>建议塑料袋回收再利用，购物时自备购物袋或环保两用袋！
+                        </td>
+                    </tr>
+                    <tr class="odd  ">
+                        <td>8</td>
+                        <td>
+                            <img class="plastic_img" src="OceanEnvironment/Caculate/img/88.jpg" />
+
+                        </td>
+                        <td  class="content" >
+                            <span id="res_q8_sum">52</span>
+                        </td>
+                        <td id="res_q8_adv"  class="res_adv" style="
+
+                            "><span class="Red">拒用 </span>建议尽量少购买过度包装的食品！</td>
+                    </tr>
+
+                    <tr  class=" "> 
+                        <td id="res_score_td" colspan="4" style="color: rgb(0,103,103); font-weight:  bold; text-align: center">  <span id="score"></span></td>
+                    </tr>
+                </table>
+            </div>
+
+        <script src="OceanEnvironment/Caculate/js/style.js"></script>
+        </div>
+
+
+    </body>
+
+</html>

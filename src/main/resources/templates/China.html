@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="DataBrowsing/favicon.ico">
+    <title>中国海域水质监测</title>
+    <link rel="stylesheet" href="DataBrowsing/China/china.css">
+</head>
+
+<body>
+<div class="header">
+    <div class="back-button">
+        </div>
+    <div class="title">我国海域水质监测</div>
+</div>
+
+<div class="mainbox">
+    <ul class="clearfix nav1">
+        <li style="width: 30%">
+            <div class="box item9" style="width: 450px">
+                <div class="tit1">各海区未达到第一类海水水质标准的海域面积</div>
+                <div class="boxnav" style="height: 380px;" >
+                    <div id="areaSelection" style="height: 30px;">
+                        <select id="areaSelect" style="width: 80px; height: 100%; background-color: transparent; color: white; ">
+                            <option value="渤海">渤海</option>
+                            <option value="黄海">黄海</option>
+                            <option value="东海">东海</option>
+                            <option value="南海">南海</option>
+                        </select>
+                    </div>
+                    <div style="height: 380px;" id="echart5"></div>
+                </div>
+            </div>
+            <div class="box item9" style="width: 450px">
+                <div class="tit1">2023富营养化海域</div>
+                <div class="boxnav" style="height: 350px" id="echart2">
+                </div>
+            </div>
+
+
+        </li>
+
+        <li style="width: 45%; margin-left: 10px;">
+            <div class="echart67" style="width: 93%">
+                <div class="boxnav echart-container">
+                    <div class="echarts-chart" style="height: 200px" id="echart6"></div>
+                </div>
+                <div class="boxnav echart-container">
+                    <div class="echarts-chart" style="height: 200px" id="echart7"></div>
+                </div>
+            </div>
+            <div class="boxnav mapc" style="z-index: 100">
+                <div class="echarts-map" id="3dMap"></div>
+            </div>
+        </li>
+
+        <li style="width: 27%">
+            <div class="box item9" >
+                <div class="tit1">2017-2023年全国近岸水质面积比例变化</div>
+                <div class="boxnav" style="height: 300px; margin-right: 20px"  id="echart3">
+                </div>
+            </div>
+            <div class="box item9">
+                <div class="tit1">海水水质监测</div>
+                <div class="slide-title">
+                    <span>海区</span>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;省份 </span>
+                    <span>&nbsp;&nbsp;检测时间</span>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;站点编号</span>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;水质</span>
+                </div>
+                <div class="slide-container"  style="height: 395px; margin-left: 5px;">
+                    <ul class="slide-list js-slide-list" id="list">
+                    </ul>
+                </div>
+            </div>
+        </li>
+
+
+    </ul>
+</div>
+</body>
+<script>
+    fetch('/point/list')  // 发送GET请求到后端API
+        .then(response => response.json())
+        .then(data => {
+            // 获取列表容器元素
+            const listContainer = document.getElementById('list');
+            // 遍历后端返回的数据
+            data.forEach(item => {
+                // 创建 li 元素
+                const liElement = document.createElement('li');
+                title=["area","province","pcode","date","waterquality"]
+                // 创建多个 span 元素，并为每个 span 设置文本内容
+                for (let text in item) {
+                    if (title.includes(text)){
+                        const spanElement = document.createElement('span');
+                        spanElement.textContent = item[text];
+                        liElement.appendChild(spanElement);
+
+                    }
+                };
+
+                // 将 li 元素添加到列表容器中
+                listContainer.appendChild(liElement);
+            });
+        })
+        .catch(error => console.log(error));
+</script>
+<script src="DataBrowsing/China/jquery.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/echarts@5.1.0/dist/echarts.min.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/echarts-gl@2.0.0/dist/echarts-gl.min.js"></script>-->
+<script src="DataBrowsing/China/echarts.min.js"></script>
+<script src="DataBrowsing/China/echarts-gl.min.js"></script>
+
+<script src="DataBrowsing/China/china.js"></script>
+<!--<script src="DataBrowsing/China/geoAtlasJson.js"></script>-->
+<script src="DataBrowsing/China/map3D.js"></script>
+<script src="DataBrowsing/China/js.js"></script>
+</html>

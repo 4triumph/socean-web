@@ -1,0 +1,179 @@
+/*------------------*/
+@charset "UTF-8";
+
+/*-----all size-----*/
+body, div:not(.hamburger), a, i, img, p, h1, h2, h3, h4, button, form, label, input, textarea {
+    -o-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    -webkit-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+body {
+    background-color:#ffffff;
+    color:#1e1e1e;
+    font-size:1.8rem;
+    font-family:Open Sans,sans-serif;
+    padding:0;
+    margin: 0;
+    width:100%;
+    height:100%;
+    line-height:1.7;
+    letter-spacing:0.5px;
+}
+* { box-sizing: border-box; }
+
+[class*="col-"] {
+    float: left;
+    padding: 0 0 25px 0;
+}
+
+svg:not(:root){overflow:hidden}
+
+img {
+    width:100%;
+    border:0;
+}
+
+.columnBg{
+    background-color: #fff;
+    position: relative;
+    padding: 0 10% 3% 13%;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    top: 60px;
+}
+.columnBg li {
+    font-family:Open Sans,sans-serif;
+    font-size: 1.2em;
+    color:#333;
+    LINE-HEIGHT:150%;
+    LETTER-SPACING:0.5pt;
+    text-align:left;
+}
+
+.columnBg li li {
+    font-size: 1em;
+}
+
+.rwd-break { display: none; }
+
+.row-break-10px {
+    clear: both;
+    height:10px;
+}
+
+.row-break-30px {
+    clear: both;
+    height:30px;
+}
+
+/*-----font-----*/
+
+p {
+    font-family:Open Sans,sans-serif;
+    font-size: 1.166em;
+    color:#333;
+    LINE-HEIGHT:150%;
+    LETTER-SPACING:0.5pt;
+    text-align:left;
+}
+
+a {
+    -moz-transition: all .25s ease-in-out;
+    -webkit-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+a:link {font-family:Open Sans,sans-serif; text-decoration:none; color:#00528a; }
+a:visited { text-decoration:none; color:#00528a; }
+a:active { text-decoration:none; color:#00528a; }
+a:hover { text-decoration:none; color: rgba(0, 157, 255, 0.84); }
+
+
+.button-menu {
+    position: fixed;
+    left: 30px;
+    top: 55%;
+    transform: translateY(-40%);
+    background-color: rgba(0, 157, 255, 0.84);
+    padding: 0;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 150px;
+    height: 500px;
+    border: 2px dashed transparent;/* 添加透明的虚线边框 */
+    outline: 4px dashed rgba(0, 157, 255, 0.84);/* 添加与实际边框相距的虚线边框 */
+    outline-offset: 5px;/* 设置虚线边框与实际边框的距离 */
+    z-index: 9999; /*使其位于最上方*/
+}
+.menu-divider {
+    width: 90%;
+    height: 8px;
+    background-color: #fff;
+    margin: 10px auto;
+    border: none;
+    border-radius: 20px;
+}
+
+
+.button {
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 90px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+}
+.button:hover {
+    animation: shaking 0.4s infinite;
+    color: #00528a;
+}
+.button:hover i{
+    color: #00528a;
+}
+@keyframes shaking {
+    0% {transform: translateX(0) rotate(0deg);}
+    25% {transform: translateX(15px) rotate(5deg);}
+    50% {transform: translateX(0px) rotate(0deg);}
+    75% {transform: translateX(-15px) rotate(-5deg);}
+    100% {transform: translateX(0px) rotate(0deg);}
+}
+/*.button:hover i {*/
+/*     color: #f5f8fa;*/
+/* }*/
+
+.button:first-child {
+    height: 300px; /* 调整第一个按钮的高度 */
+    font-size: 40px;
+}
+
+.button:first-child i {
+    top: 40px;
+    font-size: 80px;
+}
+
+.button:last-child {
+    height: 300px; /* 调整第二个按钮的高度 */
+    font-size: 40px;
+
+}
+.button:last-child i{
+    bottom: 10px;
+    font-size: 80px;
+}
+.button:last-child span {
+    margin-top: 20px;} /* 调整第二个按钮的文字与图标之间的垂直间距 *
+

@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #fff;
+    font-size: 16px;
+    background:#003bc9;
+    background: linear-gradient(to bottom right, #003bc9, #023ac2 , #021341);
+    background-size: 100% 100%;
+}
+html, body {
+    min-height: 100%;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    /*background-color: rgba(0, 0, 0, 0.5); !* 半透明黑色背景 *!*/
+    color: #fff; /* 白色文字 */
+    text-align: center;
+    padding: 10px 100px;
+    background: rgba(0,0,0,.2)
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+.back-button {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 2;
+}
+
+.back-button::before {
+    content: '←';
+    font-size: 24px;
+}
+
+li {
+    list-style-type: none;
+}
+.clearfix:after, .clearfix:before {
+    display: table;
+    content: " "
+}
+
+.clearfix:after {
+    clear: both
+}
+
+.mainbox {
+    position: relative; /* 设置相对定位，以便绝对定位子元素相对于其定位 */
+    margin-top: 60px;
+}
+
+.nav1>li {
+    position: absolute; /* 设置绝对定位 */
+}
+
+.nav1>li:nth-child(1) {
+    left: 12px; /* 左侧列左对齐 */
+}
+
+.nav1>li:nth-child(2) {
+    left: 36%; /* 将中间列定位到页面中间 */
+    transform: translateX(-50%); /* 水平居中 */
+    z-index: 1;
+}
+
+.nav1>li:nth-child(3) {
+    right: 22px; /* 右侧列右对齐 */
+}
+.echart67 {
+    position: relative;
+    display: flex;
+    left: 270px;
+    top: 15px;
+}
+
+.boxnav.echart-container {
+    position: relative;
+    display: inline-block;
+    width: 45%;
+    background: rgba(0,0,0,.2);
+    padding:15px;
+}
+
+.boxnav.echart-container .echarts-chart {
+    position: relative;
+    width: 100%;
+
+}
+.boxnav.mapc {
+    position: relative;
+    z-index: -1;
+}
+
+.boxnav.mapc .echarts-map {
+    position: absolute;
+    left: 20px;
+    width: 1000px;
+    height: 800px;
+    top: -140px;
+}
+
+
+.box {
+    position: relative;
+    background: rgba(0,0,0,.2);
+    padding:15px;
+    margin-bottom:15px;
+}
+
+
+.tit1 {
+    position: relative;
+    padding: 10px 10px 10px 25px;
+    font-size: 18px;
+    font-weight: 500;
+    color:#fff;
+
+}
+.tit1:before{
+    width: 90%;
+    height: 1px;
+    top:20px;
+    position: absolute;
+    content: "";
+    border-bottom: dashed #fff 1px;
+    right: 0;
+    opacity: .2;
+}
+.tit1:after{
+    width: 8px;
+    height:10px;
+    top:18px;
+    position: absolute;
+    content: "";
+    border-radius:20px;
+    right: 0;
+    background: #0c51f9;
+}
+.box:before {
+    width: 100%;
+    height: 1px;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+}
+
+.box:before {
+    top: -1px;
+}
+
+.boxnav {
+    padding: 0;
+}
+.mapc {
+    background-size: 100% 100%;
+    left: 50px;
+}
+
+.echarts-map {
+    margin-top: 40px; /* 调整上边距的值来实现下移效果 */
+    position: relative;
+    left: 0;
+    right: 0;
+    width: 80vw;
+    height: 100vh;
+}
+.mapnav {
+    position: absolute;
+    z-index: 10;
+}
+
+
+.slide-title {
+    background: rgb(0, 80, 189, .5);
+    color: rgba(255,255,255,.9);
+    height: 34px;
+    line-height: 34px;
+    padding: 0 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.slide-title span {
+    float: left;
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+    margin: 0 4px; /* 调整点之间的水平间距 */
+}
+.slide-title span:nth-child(1),
+.slide-list li span:nth-child(1){
+    width: 60px;
+}
+.slide-title span:nth-child(2),
+.slide-list li span:nth-child(2){
+    width: 60px;
+    margin-right: 30px;
+}
+.slide-title span:nth-child(3),
+.slide-list li span:nth-child(3){
+    width: 60px;
+
+}
+.slide-title span:nth-child(4),
+.slide-list li span:nth-child(4){
+    width: 70px;
+    /*margin-right: 70px;*/
+}
+.slide-title span:nth-child(5),
+.slide-list li span:nth-child(5){
+    width: 60px;
+}
+.slide-container {
+    position: relative;
+    overflow: hidden;
+    height: 525px;
+}
+.slide-list {
+    display: inline-block;
+    position: absolute;
+    width: 600%;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.5s ease;
+}
+.slide-list li {
+    height:30px;
+    line-height:30px;
+    list-style:none;
+    margin:0;
+    padding:0 10px;
+}
+
+.slide-list li span {
+    display:inline-block;
+    margin-right:14px;
+    font-size:12px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    text-align: center;
+    vertical-align: middle;
+
+}
+.slide-list li:nth-child(odd) {
+    color: #FFFFFF;
+    background-color: rgba(1, 41, 138, 0.85); /* 设置奇数行背景颜色 */
+}
+
+/* 设置偶数行背景颜色 */
+.slide-list li:nth-child(even) {
+    color: #FFFFFF;
+    background-color: transparent; /* 设置偶数行背景颜色 */
+}
+.polar-container{
+    position: relative;
+    overflow: hidden;
+    height: 390px;
+}
+
+
+.item9 {
+    left: 5px;
+    top: 15px;
+    right:5px;
+    bottom: 15px;
+    padding-top: 0;
+    position: relative;
+}
+
+
+select#areaSelect {
+    width: 80px;
+    height: 100%;
+    background-color: transparent;
+    color: white;
+    border: 0.8px solid white;
+    border-radius: 20px;
+    outline: none;
+}
+
+/* 下拉框扩展之后的样式 */
+select#areaSelect:focus {
+    background-color: #003bc9; /* 点击扩展后的背景色为蓝色 */
+    color: white; /* 字体颜色为白色 */
+}
+
+/* 下拉框选项的样式 */
+select#areaSelect option {
+    background-color: #003bc9; /* 下拉框选项的背景色为蓝色 */
+    color: white; /* 下拉框选项的字体颜色为白色 */
+}
+
+/* 鼠标悬停时的样式 */
+select#areaSelect:hover {
+    background-color: white; /* 鼠标悬停时背景色为白色 */
+    color: #003bc9; /* 鼠标悬停时字体颜色为蓝色 */
+}

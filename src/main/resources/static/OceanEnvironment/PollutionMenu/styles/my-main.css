@@ -1,0 +1,315 @@
+/*-----All-----*/
+.img-floatLeft{float:left;}
+.img-floatRight{float:right;}
+.content-center{text-align:center;}
+.content-right{text-align:right;}
+
+.header{
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*width: 100%;*/
+    /*height: 60px;*/
+    /*padding: 10px 100px;*/
+    /*background: #0B0F2A;*/
+    /*z-index: 2000;*/
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+    /*align-items: center;*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: #0B0F2A;
+    z-index: 2000;
+    display: flex;
+    justify-content: space-between;
+    /*设置主轴上的对齐方式，这里是将容器内的项目沿主轴均匀分布，两端与容器的边界相邻，项目之间的间隔相等。*/
+    align-items: center;
+    /*设置交叉轴上的对齐方式，这里是将容器内的项目在交叉轴上居中对齐*/
+}
+.header .logo{
+    font-size: 32px;
+    color: #fffefe;
+    text-decoration: none;
+    font-weight: 700;
+}
+.header a{
+    font-family: Microsoft YaHei;
+    font-size: 20px; /* 调整字体大小 */
+    font-weight: 500; /* 设置粗体 */
+}
+.header .logo span{
+    color: #1e72c7;
+}
+.header .navbar{
+    margin-right: 0px;
+}
+.header .navbar a{
+    /*font-family: Microsoft YaHei;*/
+    /*font-size: 20px; !* 调整字体大小 *!*/
+    /*font-weight: 500; !* 设置粗体 *!*/
+    /*transition: all 0.3s ease 0s;*/
+    /*position: relative;*/
+    /*color: #fff;*/
+    /*text-decoration: none;*/
+    /*margin-left: 40px;*/
+    transition: all 0.3s ease 0s;
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+.header .navbar a:hover{
+    color: #0050bd;
+}
+.header .menu-item.active {
+    background-color: #0050bd;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+/*-----banner-----*/
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    top: 60px; /* 修改 top 值，使其在 header 下方 */
+    z-index: 1000; /* 更改这里的 z-index 值为较小值 */
+}
+
+.banner .image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.banner-img{
+    object-fit: cover;
+    z-index:-1;
+    max-width:100%;
+    height:250px;
+}
+.banner-title-S p{
+    color:#4a4a4a;
+    font-size:16pt;
+    text-align:center;
+    padding: 85px 0 0;
+}
+.banner-title-S strong{
+    font-size:24pt;
+    padding:10px 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    background-color: rgba(100%,100%,100%,0.8);
+}
+.banner span{
+    position:absolute;
+    z-index:1;
+    width:100%;
+}
+.banner-title-L p{
+    margin:0 auto;
+    color:#4a4a4a;
+    font-size:34pt;
+    line-height:250px;
+    text-align:center;
+}
+.banner-title-L strong {
+    padding:18px 50px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background-color: rgba(100%,100%,100%,0.8);
+    text-transform: uppercase;
+}
+button[type=submit].button-area {
+    background: #0071bd;
+    color: #ffffff;
+    border: 0;
+    margin: 0;
+    font-size: 17px;
+    padding: 5px 25px 7px;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 5px 7px 15px #666666;
+}
+
+button[type=submit].button-area:hover {
+    color: #ffffff !important;
+}
+
+/*-----issues.html-----*/
+.subtitle-tag {
+    margin: 5px;
+    border: 1px solid #fff;
+    display: inline-block;
+    text-align: center;
+}
+.subtitle-tag .name {
+    margin: 0;
+    padding: 0 12px 6px 10px;
+    padding: 0 12px 12px 10px\0; /* IE only */
+    text-align: center;
+    color:black;
+    font-weight: 300;
+    font-size:20px;
+    float: left;
+}
+.subtitle-ul ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #fff;
+    width: 100%;
+}
+.subtitle-ul li {
+    display: inline-block;
+    text-align: center;
+    font-size:18px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    margin: 5px 0;
+}
+.subtitle-ul li:nth-child(1){
+    background-color: #3b70b2;
+}
+
+.subtitle-ul li:nth-child(2){
+    background-color: #1dc0bd;
+}
+
+.subtitle-ul li:nth-child(3){
+    background-color: #5b5b5d;
+}
+
+.subtitle-ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+.subtitle-ul li a:hover:not(.active) {
+    color:#333;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+.subtitle-ul .active{
+    background-color: #efefef;
+}
+
+.subtitle-alt {
+    display: inline-block;
+    text-align: center;
+    font-size:15px;
+    font-weight: 300;
+    padding: 4px 12px 6px 10px;
+    padding: 4px 12px 12px 10px\0; /* IE only */
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+}
+.subtitle-alt a {
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+.subtitle-alt a:hover {
+    color:#333;
+}
+
+
+.masonry {
+    width: 100%;
+    margin: 1.5em 0;
+    padding: 0;
+    -moz-column-gap: 1.5em;
+    -webkit-column-gap: 1.5em;
+    column-gap: 1.5em;
+    font-size: .85em;
+}
+
+.item {
+    display: inline-block;
+    background: #eee;
+    padding: 1em;
+    margin: 0 0 1.5em;
+    width: 100%;
+    border-radius: 20px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.masonry>div>nav{
+    display:inline-block;
+    float:left;
+    min-width:25px;
+    min-height:25px;
+}
+nav#oceans{
+    background: #3b70b2;
+}
+
+nav#water{ background: #1dc0bd; }
+
+nav#plastic{ background: #5b5b5d; }
+
+.masonry div>a.test-button:hover{
+    background: #4f4f4f; color: #FFF;
+}
+
+.item img, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    -moz-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+.item:hover img {
+    opacity: .75;
+}
+
+
+@media only screen and (min-width: 600px) {
+    .masonry {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+
+
+@media only screen and (min-width: 900px) {
+    .masonry {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+
+
+@media only screen and (min-width: 1200px) {
+    .masonry {
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count: 4;
+    }
+}

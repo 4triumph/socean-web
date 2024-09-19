@@ -1,0 +1,92 @@
+body {
+  font-family: "Abel", sans-serif;
+  background: #373e48;
+  color: #b6dadd;
+}
+
+h2 {
+  font-weight: normal;
+  text-align: center;
+  margin-top: 2vh;
+}
+
+svg {
+  margin-top: -5vh;
+  width: 90vw;
+  height: 90vh;
+  margin-left: 5vw;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  position: absolute;
+}
+
+#dialog {
+  display: none;
+}
+
+#usa,
+#india,
+#eu,
+#china {
+  opacity: 0;
+}
+
+.text-usa,
+.text-eu,
+.text-india,
+.text-china {
+  opacity: 0;
+  display: none;
+}
+
+.hotspot {
+  cursor: pointer;
+  /* make the hit targets bigger for mobile */
+  padding: 20px;
+}
+
+#outlines {
+  stroke-width: 0.5;
+  stroke-opacity: 0.6;
+}
+
+.text-info {
+  background: #23272d;
+  padding: 20px;
+  max-width: 350px;
+  border: 1px solid #b6dadd;
+  position: absolute;
+  right: 5vw;
+  top: 40vh;
+}
+
+.text-info table {
+  margin-top: 10px;
+}
+
+.text-info td {
+  width: 15%;
+  height: 30px;
+}
+
+.text-info td:first-child {
+  font-weight: bold;
+}
+
+.text-info h2 {
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #7b848e;
+}
+
+.x-out {
+  position: absolute;
+  fill: #b6dadd;
+  width: 45px;
+  height: 45px;
+  right: 5vw;
+  top: 80px;
+  opacity: 0;
+  cursor: pointer;
+}

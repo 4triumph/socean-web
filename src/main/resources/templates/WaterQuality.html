@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>历年入海河流断面水质超标指标</title>
+    <link rel="shortcut icon" href="DataBrowsing/favicon.ico">
+    <link rel="stylesheet" href="DataBrowsing/WaterQuality/WaterQuality.css">
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1>历年直排海污染源监测</h1>
+        <div id="yearSelection" class="box">
+            <select id="yearSelect">
+                <option value="2022">2022年</option>
+                <option value="2021">2021年</option>
+                <option value="2020">2020年</option>
+                <option value="2019">2019年</option>
+                <option value="2018">2018年</option>
+                <option value="2017">2017年</option>
+                <option value="2016">2016年</option>
+            </select>
+        </div>
+        <div class="topbnt_right">
+            <ul>
+                <li><a href="ChinaCatalogue.html">返回</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="aside-left">
+            <div class="top left-top">
+                <!--                <h3>工业生活综合</h3>-->
+                <div class="chart2" id="chart_1"></div>
+            </div>
+            <div class="bottom left-bottom">
+                <!--                <h3>工业生活综合趋势</h3>-->
+                <div class="chart2" id="chart_3"></div>
+            </div>
+        </div>
+
+        <div class="aside-right">
+            <div class="right-top">
+                <div class="chart1" id="city_water_chart"></div>
+            </div>
+
+            <div class="right-bottom">
+                <div class="bottom-left">
+                    <div class="chart3" id="chart_2"></div>
+                </div>
+                <div class="bottom-right">
+                    <div class="chart3" id="chart_4"></div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+</body>
+<script src="DataBrowsing/WaterQuality/js/jquery-2.2.1.min.js"></script>
+<script src="DataBrowsing/WaterQuality/js/echarts.min.js"></script>
+<script src="DataBrowsing/WaterQuality/js/WaterQuality.js"></script>
+<script src="DataBrowsing/WaterQuality/js/Citywater.js"></script>
+
+</html>

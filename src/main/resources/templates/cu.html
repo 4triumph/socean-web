@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <title>全球生态可视化</title>
+  <link rel="shortcut icon" href="DataBrowsing/favicon.ico">
+<!--  <script type="text/javascript" src="http://t0.tianditu.gov.cn/img_w/wmts?tk=2fd9db455b8fc0149674b2252576020d"></script>-->
+  <link href="Global/lib/Cesium/Widgets/widgets.css" rel="stylesheet" />
+  <link rel="stylesheet" href="Global/style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var currentPage = window.location.pathname.split('/').pop();
+            console.log(currentPage);
+            var menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(function(item) {
+                var link = item.getAttribute('href');
+                if (link === currentPage) {
+                    item.classList.add('active');
+                }
+            });
+        });
+        window.onload = function() {
+            hidePopup();
+        };
+
+    </script>
+  <script type="text/javascript" src="Global/lib/Cesium/Cesium.js"></script>
+  <script src="Global/lib/jquery.min.js"></script>
+  <script src="Global/lib/wind/Particle.js"></script>
+  <script src="Global/lib/wind/WindField.js"></script>
+  <script src="Global/lib/wind/Windy.js"></script>
+
+</head>
+<body>
+<header class="header">
+    <a href="#" class="logo">海洋<span>之窗</span></a>
+
+    <nav class="navbar">
+        <a href="index.html" class="menu-item">主页</a>
+        <a href="ChinaCatalogue.html" class="menu-item">我国水域监测</a>
+        <a href="cu.html" class="menu-item">全球生态可视化</a>
+        <a href="environment.html" class="menu-item">海洋保护</a>
+        <a href="Caculate.html" class="menu-item">塑料足迹</a>
+        <a href="#" class="menu-item" onclick="redirectToExternalLink()">鱼种识别</a>
+    </nav>
+</header>
+<div id="cesiumContainer" class="fullSize"></div>
+<div id="details">
+  <p id="status"></p>
+  <div id="location">
+    <p>
+      <span id="location-coord"></span>
+      <span id="location-close" class="invisible text-button"> ✕ </span>
+    </p>
+    <p>
+      <span id="location-wind"></span>
+      <span id="location-wind-units" class="text-button"></span>
+    </p>
+    <p>
+      <span id="location-value"></span>
+      <span id="location-value-units" class="text-button"></span>
+    </p>
+  </div>
+
+  <p id="earth">
+    <span id="show-menu" class="text-button" title="menu" onclick="show()">地球</span>
+    <span id="progress" class="invisible"></span>
+  </p>
+
+  <div id="menu" class="invisible">
+      <div>
+          <p>气象 |</p>
+          <span class="text-button" id="wind-mode-enable" onclick="wind()">风</span>
+          <span class="text-button" id="ocean-mode-enable"  onclick="curr()">洋流</span>
+          <span class="text-button" id="heat-mode-enable"  onclick="heat()">温度</span>
+          <span class="text-button" id="salty-mode-enable"  onclick="salty()">盐度</span>
+          <span class="text-button" id="oxy-mode-enable"  onclick="oxy()">溶解氧</span>
+      </div>
+
+      <div>
+          <p>珊瑚 |</p>
+          <span class="text-button" id="bc" onclick="bc()">黑珊瑚</span>
+          <span class="text-button" id="gc" onclick="gc()">金珊瑚</span>
+          <span class="text-button" id="ggc" onclick="ggc()">柳珊瑚</span>
+          <span class="text-button" id="sc" onclick="sc()">软珊瑚</span>
+          <span class="text-button" id="scb" onclick="scb()">硬珊瑚(分枝状)</span>
+          <span class="text-button" id="stc" onclick="stc()">匍匐珊瑚</span>
+          <span class="text-button" id="sp" onclick="sp()">海鞭</span>
+          <span class="text-button" id="scc" onclick="scc()">硬珊瑚(杯珊瑚)</span>
+          <span class="text-button" id="llc" onclick="llc()">石髓珊瑚</span><br>
+          <span class="text-button" id="scu" onclick="scu()">硬珊瑚(未指明)</span>
+          <span class="text-button" id="lc" onclick="lc()">蕾丝珊瑚</span>
+      </div>
+      <div>
+          <p>海绵 |</p>
+          <span class="text-button" id="cs" onclick="cs()">钙质海绵</span>
+          <span class="text-button" id="ds" onclick="ds()">寻常海绵</span>
+          <span class="text-button" id="gs" onclick="gs()">玻璃海绵</span>
+          <span class="text-button" id="hs" onclick="hs()">同爪海绵</span>
+          <span class="text-button" id="su" onclick="su()">海绵(未指明)</span>
+      </div>
+  </div>
+
+</div>
+<div class="heat-bar"></div>
+<div class="salty-bar"></div>
+<div class="oxy-bar"></div>
+
+
+<!--<div id="popupContainer" class="popup-container" style="display: none;">-->
+<!--    <div id="popup" class="popup">-->
+<!--        <h2 id="popupTitle">弹窗标题</h2>-->
+<!--        <p id="popupText">这里放置弹窗内容</p>-->
+<!--        <img id="popupImage" src="" alt="图片">-->
+<!--&lt;!&ndash;        <span class="close-button" onclick="closePopup()">关闭</span>&ndash;&gt;-->
+<!--    </div>-->
+<!--</div>-->
+
+<div id="popupContainer" class="popup-container">
+    <div id="popup" class="popup">
+        <h2 id="popupTitle">弹窗标题</h2>
+        <p id="popupText">这里放置弹窗的内容</p>
+        <img id="popupImage" src="" alt="图片">
+        <span class="close-button" onclick="hidePopup()">关闭</span>
+    </div>
+</div>
+
+<button id="showPopupButton" class="show-popup-button" style="display:none;" onclick="togglePopup()">显示弹窗</button>
+<script src="Global/js.js"></script>
+<script src="Global/pop.js"></script>
+
+</body>
+</html>

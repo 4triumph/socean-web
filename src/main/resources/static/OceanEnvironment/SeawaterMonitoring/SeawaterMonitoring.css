@@ -1,0 +1,597 @@
+
+body {
+    position: relative;
+    overflow: hidden;
+    width: 1400px;
+    height: 1000px;
+    display: flex;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('bg2.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.9; /* 设置背景图片的透明度 */
+}
+
+
+.background {
+    position: absolute;
+    z-index: -1;
+}
+.additional-content img {
+    transition: filter 0.5s;
+}
+
+.additional-content a {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.additional-content a:hover img {
+    filter: blur(5px);
+}
+
+.additional-content .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #eaecef;
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.additional-content .image-link:hover .text-overlay {
+    opacity: 1;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    padding: 10px 100px;
+    background: #0B0F2A;
+    z-index: 2000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    font-size: 32px;
+    color: #fffefe;
+    text-decoration: none;
+    font-weight: 700;
+}
+.logo span{
+    color: #1e72c7;
+}
+.navbar{
+    margin-right: 200px;
+}
+.navbar a{
+    transition: all 0.3s ease 0s;
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+.navbar a:hover{
+    color: #0050bd;
+}
+.menu-item.active {
+    background-color: #0050bd;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+.container12 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 60px;
+    margin-left: 70px;
+}
+.containerl1r {
+    display: flex;
+    margin-top: 50px;
+    margin-left: 40px;
+    width: 760px;
+    height: 500px;
+    box-shadow: 0 0 10px 5px rgba(90, 184, 234, 0.7);
+}
+.containerl1r:before, .container5:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #48acb9; /* 蓝色发光效果 */
+    box-shadow: 0 0 5px 3px #2d88b9; /* 发光效果的阴影 */
+}
+
+.containerl1r:before {
+    top: -5px;
+    left: -5px;
+}
+
+.containerl1r:after {
+    bottom: -5px;
+    right: -5px;
+}
+
+.container1 {
+    width: 300px;
+    height: 450px;
+    margin-bottom: 20px;
+    overflow: hidden;
+
+}
+.containerleft, .containerright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+.containerleft {
+    margin-left: 20px;
+    width: 180px;
+}
+.containerright {
+    margin-right: 0;
+    width: 300px;
+}
+
+.title0 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: #00B7F0;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 70px;
+}
+
+.dott {
+    width: 15px;
+    height: 15px;
+    background-color: #006400;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.text {
+    font-size: 16px;
+    color: #666;
+}
+
+#main {
+    width: 1300px;
+    height:1300px;
+    margin-top: -230px;
+    margin-left: -100px;
+}
+.containera2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.additional-content {
+    width: 250px;
+    height: 292px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container2 {
+    width: 250px;
+    height: 160px;
+    margin-top: 45px;
+    box-shadow: 0 0 10px 5px rgba(90, 184, 234, 0.7);
+}
+.container2:before, .container5:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #48acb9; /* 蓝色发光效果 */
+    box-shadow: 0 0 5px 3px #2d88b9; /* 发光效果的阴影 */
+}
+
+.container2:before {
+    top: -5px;
+    left: -5px;
+}
+
+.container2:after {
+    bottom: -5px;
+    right: -5px;
+}
+
+.modal {
+    border: 2px solid #000;
+    /*width: 16%;*/
+    margin: 20px auto;
+    padding: 10px;
+    width: 250px;
+    height: 130px;
+}
+
+.title, .modal-title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 13px;
+    color: #48acb9;
+}
+
+.line, .modal-line {
+    border-top: 1px solid #000;
+    margin: 10px 0;
+}
+
+.row, .modal-row {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    margin-left: 10px;
+}
+.row span {
+    color: #00B7F0;
+}
+
+.circle {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: inline-block;
+    margin-right: 5px;
+}
+.circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.7);
+}
+.deep-green { background-color: #006400; }
+.light-green { background-color: #90EE90; }
+.red { background-color: #FF0000; }
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    padding-top: 50px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.container34 {
+    margin-top: 50px;
+    margin-left: 70px;
+    display: flex;
+    flex-direction: row;
+}
+
+.container3 {
+    width: 500px;
+    height: 240px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px 5px rgba(90, 184, 234, 0.7);
+}
+
+.container3:before, .container6:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #48acb9; /* 蓝色发光效果 */
+    box-shadow: 0 0 5px 3px #2d88b9; /* 发光效果的阴影 */
+}
+
+.container3:before {
+    top: -5px;
+    left: -5px;
+}
+
+.container3:after {
+    bottom: -5px;
+    right: -5px;
+}
+
+.container4 {
+    width: 500px;
+    height: 240px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-left: 50px;
+    box-shadow: 0 0 10px 5px rgba(90, 184, 234, 0.7);
+}
+.container4:before, .container6:after {
+    content: '';
+    position: absolute;
+    height: 10px;
+    background: #48acb9; /* 蓝色发光效果 */
+    box-shadow: 0 0 5px 3px #2d88b9; /* 发光效果的阴影 */
+}
+
+.container4:before {
+    top: -5px;
+    left: -5px;
+}
+
+.container4:after {
+    bottom: -5px;
+    right: -5px;
+}
+
+.tag-container, .faq-tag {
+    display: flex;
+    align-items: center;
+    background-color: #6cb6f1;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #4caf50;
+    margin-right: 5px;
+}
+
+.tag-title, .faq-title {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.link {
+    margin-bottom: 5px;
+}
+.link a {
+    color: #f2f5f8;
+    padding-left: 10px;
+}
+
+.new {
+    color: red;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.container56 {
+    margin-top: 60px;
+    margin-left: 20px;
+}
+.container5 {
+    padding-top:20px;
+    margin-top:50px;
+    margin-left: 20px;
+    width: 430px;
+    height: 350px;
+    box-shadow: 0 0 10px 5px rgba(90, 184, 234, 0.7);
+
+}
+.container5:before, .container5:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #48acb9; /* 蓝色发光效果 */
+    box-shadow: 0 0 5px 3px #2d88b9; /* 发光效果的阴影 */
+}
+
+.container5:before {
+    top: -5px;
+    left: -5px;
+}
+
+.container5:after {
+    bottom: -5px;
+    right: -5px;
+}
+.container6 {
+    padding-top: 20px;
+    margin-top:50px;
+    margin-left: 20px;
+    width: 430px;
+    height: 350px;
+    box-shadow: 0 0 10px 5px rgba(90, 184, 234, 0.7);
+
+}
+.container6:before, .container6:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #48acb9; /* 蓝色发光效果 */
+    box-shadow: 0 0 5px 3px #2d88b9; /* 发光效果的阴影 */
+}
+
+.container6:before {
+    top: -5px;
+    left: -5px;
+}
+
+.container6:after {
+    bottom: -5px;
+    right: -5px;
+}
+/*.dropdown {*/
+/*    position: relative;*/
+/*    display: inline-block;*/
+/*}*/
+/*.dropdown-content {*/
+/*    display: none;*/
+/*    position: absolute;*/
+/*    background-color: #0B0F2A;*/
+/*    min-width: 160px;*/
+/*    z-index: 1900;*/
+/*    padding-left: 0;*/
+/*    margin: auto;*/
+/*}*/
+
+/*.dropdown-content li {*/
+/*    padding: 12px 16px;*/
+/*    text-decoration: none;*/
+/*    display: block;*/
+/*    padding-left: 0;*/
+/*}*/
+
+/*.dropdown:hover .dropdown-content {*/
+/*    display: block;*/
+/*}*/
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
+    z-index: 999; /* 确保覆盖在所有其他内容之上 */
+    display: none; /* 初始隐藏 */
+}
+
+/* 空白框样式 */
+.popup {
+    border-radius: 50px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    width: 900px;
+    /*height: 700px;*/
+    z-index: 1000; /* 确保位于透明背景层之上 */
+    display: none; /* 初始隐藏 */
+    max-height: 80vh; /* 假设弹出框的最大高度为视口高度的80% */
+    overflow-y: auto;
+}
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    color: #f8f5f5;
+    font-size: 50px;
+    font-weight: bold;
+    padding: 5px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgba(0, 157, 255, 0.84);
+}
+.popup-content{
+    padding: 20px;
+}
+.popup-content strong {
+    text-align: center;
+    font-size: 40px;
+    color: #09479b;
+}
+.popup-content p {
+    font-size: 20px;
+    color: #333;
+    padding-bottom: 10px;
+}
+.popup-content p + p {
+    margin-top: 10px; /* 设置相邻段落之间的间距 */
+}
+.link {
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: rgb(0, 80, 189);
+}
+.link-text{
+    padding-left: 10px;
+}
+
+/* 未访问的链接样式 */
+.link a {
+    color: #ffffff;
+    /*text-decoration: none;*/
+}
+
+/* 访问过的链接样式 */
+.link a:visited {
+    color: #314357; /* 访问过的链接颜色为紫色 */
+}
+
+/* 悬停链接样式 */
+.link a:hover {
+    color: #014F9C;
+}

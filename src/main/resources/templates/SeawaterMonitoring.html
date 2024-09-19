@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="OceanEnvironment/jquery.js"></script>
+    <script type="text/javascript" src="OceanEnvironment/echarts.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="OceanEnvironment/SeawaterMonitoring/SeawaterMonitoring.css">
+    <title>海水监测</title>
+    <link rel="shortcut icon" href="DataBrowsing/favicon.ico">
+
+</head>
+
+<body>
+<header class="header">
+    <a href="#" class="logo">海洋<span>之窗</span></a>
+
+    <nav class="navbar">
+        <a href="index.html" class="menu-item">主页</a>
+        <a href="ChinaCatalogue.html" class="menu-item">我国水域监测</a>
+        <a href="cu.html" class="menu-item">全球生态可视化</a>
+        <a href="environment.html" class="menu-item active">海洋保护</a>
+        <a href="Caculate.html" class="menu-item">塑料足迹</a>
+        <a href="#" class="menu-item" onclick="redirectToExternalLink()">鱼种识别</a>
+    </nav>
+</header>
+
+
+
+<div class="background">
+    <canvas width="1400" height="1000" id="fishtank"></canvas>
+</div>
+
+<div class="contaner1234">
+    <div class="container12">
+
+        <div class="containera2">
+            <div class="additional-content">
+                <a href="Future.html" class="image-link">
+                    <img src="OceanEnvironment/SeawaterMonitoring/dirty.png" style="width: 250px; height: 292px;">
+                    <div class="text-overlay">日本核污水排放时间线</div>
+                </a>
+            </div>
+            <div class="container2">
+                <div class="title">海水辐射监控灯号</div>
+                <div class="line"></div>
+                <div class="row">
+                    <div class="circle deep-green" onclick="openModal()"></div>
+                    <span>安全，正常范围</span>
+                </div>
+                <div class="row">
+                    <div class="circle light-green" onclick="openModal()"></div>
+                    <span>安全，关注必要时加强监测</span>
+                </div>
+                <div class="row">
+                    <div class="circle red" onclick="openModal()"></div>
+                    <span>调查评估，必要时进行干预</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div class="modal-title">海水辐射监测灯号说明</div>
+                <div class="modal-line"></div>
+                <p>海水监测灯号标准 单位：贝克/公升（Bq/L）</p>
+                <table>
+                    <tr>
+                        <th>类型</th>
+                        <th>指标</th>
+                    </tr>
+                    <tr>
+                        <td>海水（氚）</td>
+                        <td><div class="circle deep-green"></div><100 Bq/L, <div class="circle light-green"></div>100-1000 Bq/L, <div class="circle red"></div>>1000 Bq/L</td>
+                    </tr>
+                </table>
+                <div class="modal-line"></div>
+                <p>监测灯号说明：</p>
+                <div class="modal-row">
+                    <div class="circle deep-green"></div>
+                    <span>安全，正常范围</span>
+                </div>
+                <div class="modal-row">
+                    <div class="circle light-green"></div>
+                    <span>安全，关注必要时加强监测</span>
+                </div>
+                <div class="modal-row">
+                    <div class="circle red"></div>
+                    <span>调查评估，必要时进行干预</span>
+                </div>
+                <div class="modal-line"></div>
+                <p>参考基准：</p>
+                <p>世界卫生组织（WHO）的国际饮用水安全标准规定，氚核种标准为10,000贝克/升。</p>
+                <p>海水（氚）红灯设为该标准的十分之一以上，即为1,000贝克/升；深绿灯设为该标准的百分之一以下，即为100贝克/升；超过100、未达1,000贝克/升即为浅绿灯。</p>
+            </div>
+        </div>
+        <div class="containerl1r">
+            <div class="containerleft">
+                <div class="title0">西北海域</div>
+                <div class="box">
+                    <div class="dott"></div>
+                    <div class="text">海水</div>
+                </div>
+                <div class="title0">西部海域</div>
+                <div class="box">
+                    <div class="dott"></div>
+                    <div class="text">海水</div>
+                </div>
+                <div class="title0">西南海域</div>
+                <div class="box">
+                    <div class="dott"></div>
+                    <div class="text">海水</div>
+                </div>
+
+            </div>
+            <div class="container1">
+                <div id="main"></div>
+            </div>
+            <div class="containerright">
+                <div class="title0">东北海域</div>
+                <div class="box">
+                    <div class="dott"></div>
+                    <div class="text">海水</div>
+                </div>
+                <div class="title0">东部海域</div>
+                <div class="box">
+                    <div class="dott"></div>
+                    <div class="text">海水</div>
+                </div>
+                <div class="title0">东南海域</div>
+                <div class="box">
+                    <div class="dott"></div>
+                    <div class="text">海水</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay" onclick="hidePopup()"></div>
+    <div class="popup" id="popup1">
+        <span class="close-btn" onclick="hidePopup()">&times;</span>
+        <div class="popup-content">
+            <p><strong>Q1：氚是什么？氚有什么特性？</strong></p>
+            <p>1. 氚(3H)是一种放射性物质，为氢的同位素，物理半衰期为12.3年。因其性质与氢(H)相似，故非常难以将氚单独分离及去除。</p>
+            <p>2. 氚释放出的辐射为低能量的贝塔(β)辐射，在空气中约可行进5毫米(mm)的距离，一张白纸甚至皮肤就可以阻挡了。</p>
+            <p>3. 氚有自然存在的，也有人工产生的。自然界中的氚由宇宙射线与大气分子相互作用而产生。环境中的氚除了天然存在的氚，还有人工产生的氚。人工氚主要来自核子核爆及核能发电等核设施运转过程中产生。</p>
+        </div>
+    </div>
+    <div class="popup" id="popup2">
+        <span class="close-btn" onclick="hidePopup()">&times;</span>
+        <div class="popup-content">
+            <p><strong>Q2：如何检测海水中的氚含量？</strong></p>
+            <p>1. 检测海水中的氚含量，必须将采集海水样本，通过实验室技术进行分析，量测氚释放的低能量贝他(β)辐射。</p>
+            <p>2. 由于海水中的杂质会影响检测结果，因此海水样品送到实验室后，需先去除海水中的杂质，再进行检测分析。</p>
+            <p>3. 一般通过加热蒸馏等方法去除海水中的杂质，蒸馏水收集后，与液体闪烁剂混合，水中的氚核种所释放的低能量贝他(β)辐射会让液体闪烁剂产生荧光，通过液体闪烁计数仪(Liquid Scintillation Counter，LSC)量测荧光光量，再将荧光光量换算成氚核种的活度，即可获得海水中氚含量。</p>
+            <p>4. 海水样本送至实验室，以加热蒸馏法处理分析，所需时间约1至2个工作天。</p>
+        </div>
+    </div>
+    <div class="popup" id="popup3">
+        <span class="close-btn" onclick="hidePopup()">&times;</span>
+        <div class="popup-content">
+            <p><strong>Q3：氚会在人体中吗？氚对人体有什么影响？</strong></p>
+            <p>1. 自然界中本来就存在氚，人体中也有。</p>
+            <p>2. 氚大多以「水」的形态存在环境中主要以氚水(HTO，原本水中的一个氢原子被氚取代)的方式参与自然界中的水循环，也会存在于生物体内的水分子中，或与碳元素结合成有机物质。</p>
+            <p>3. 氚本身的物理半衰期为12.3年，在生物体内会通过代谢，排出体外，不会积累在人体特定组织中，氚的生物半衰期约为10天。</p>
+            <p>4. 目前国际研究并没有显示氚会造成人体癌症，以风险系数而言，氚对人体的影响微乎其微。</p>
+        </div>
+    </div>
+    <div class="popup" id="popup4">
+        <span class="close-btn" onclick="hidePopup()">&times;</span>
+        <div class="popup-content">
+            <p><strong>Q4：如何检测生物体中的氚含量？</strong></p>
+            <p>1. 检测生物体中的氚含量，必须将采集的生物样本，通过实验室技术进行分析，量测氚释放出的低能量贝他(β)辐射。</p>
+            <p>2. 由于氚在生物体中会存在于水分子中，也会与碳元素结合成有机物质，因此生物体中的氚可区分为组织内游离水氚(Tissue Free Water Tritium，TFWT)及有机结合氚(organically bound tritium，OBT)两种形式，生物氚检测可分为检测上述两种形式的氚含量。</p>
+            <p>3. 生物样本经过冷冻干燥，在低温、真空状态下，将冷冻后凝结在生物体中的水分升华为水蒸气，再将其取出，以量测水中氚含量的方式，进一步以液体闪烁计数仪(Liquid Scintillation Counter，LSC)量测，即可获得组织内游离水氚(TFWT)的含量。</p>
+            <p>4. 此生物样本再经过加热干燥与燃烧，在通氧气与高温状态下，可使其中与碳元素等结合的氚，透过与氧燃烧，产生氚水(HTO，原本水中的一个氢原子被氚取代)，进一步量测，即可获得有机结合氚(OBT)的含量。</p>
+            <p>5. 生物氚检测技术复杂，在国际间也属于开发阶段。为因应日本福岛含氚废水排放作业，国家原子能科技研究院已开发生物氚标准检测流程，建置国内第一个生物氚检测实验室，透过跨部会合作，执行渔产、水产食品、海域生态样本之氚含量检测。</p>
+            <p>6. 生物样本送至国原院生物氚检测实验室，处理分析所需时间约1个月。</p>
+        </div>
+    </div>
+    <div class="popup" id="popup5">
+        <span class="close-btn" onclick="hidePopup()">&times;</span>
+        <div class="popup-content">
+            <p><strong>Q5：为什么不能连续自动监测海水中的氚？</strong></p>
+            <p>1. 检氚放射出的贝塔(β)辐射能量低、射程短、穿透力弱，容易被海水或生物体等样品本身自吸收，即使少数的贝塔(β)辐射没有被吸收，也无法穿透容器到达检测器。另外，海水或生物体中的杂质也会影响检测结果，因此无法在环境中自动监测，需将样本通过实验室技术分析。</p>
+            <p>2. 核安全委员会所提供的全天候24小时自动环境辐射监测系统，是检测环境中辐射能量较高、射程较长、穿透力高的γ辐射。</p>
+        </div>
+    </div>
+    <div class="popup" id="popup6">
+        <span class="close-btn" onclick="hidePopup()">&times;</span>
+        <div class="popup-content">
+            <p><strong>Q6：含氚废水排放后会不会污染食盐，需要不需要及早囤货？</strong></p>
+            <p>1. 氚主要以氚水的形式存在，精炼食盐内的水分非常微量 (3% 以下)，存在的氚也就非常微量。若将福岛核电厂排放到海洋的水拿来制盐，且水中氚浓度以限值假设(每升 1500 贝克)，保守评估 1 公斤的盐中氚含量约为 45 贝克，要吃到世界卫生组织(WHO)食品法典中(CODEX)中对一般食品中的氚含量10,000贝克标准，需要吃222公斤的盐。</p>
+            <p>2. 台盐公司112年8月25日发布新闻稿表示该公司相关产品包括澳洲进口天然盐原料，均送样至核安会辐射检测中心检测，最新送验产品均无超过卫福部订定之标准，请民众放心无须囤货。</p>
+        </div>
+    </div>
+    <div class="container34">
+        <div class="container3">
+            <div class="tag-container">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="tag-title">最新消息舆情说明</div>
+            </div>
+            <div class="link">
+                <a href="https://www.nusc.gov.tw/newsdetail/headline/6920.html" target="_blank">2024-03-18 我国应对日本含氚废水排放配套措施进度说明（第15报）。<span class="new">new!</span></a>
+            </div>
+            <div class="link">
+                <a href="https://www.nusc.gov.tw/newsdetail/headline/6915.html"target="_blank">2024-03-15 我国因应日本含氚废水排放配套措施进度说明(第14报)<span class="new">new!</span></a>
+            </div>
+            <div class="link">
+                <a href="https://www.nusc.gov.tw/newsdetail/headline/6913.html"target="_blank">2024-03-15 日本时间2024年3月15日00时14分（台湾时间14日23时14分），日本福岛县海域发生规模5.8（震度5弱）地震，核安委持续关注后续发展（第1报）。</a>
+            </div>
+        </div>
+        <div class="container4">
+            <div class="faq-tag">
+                <div class="dot"></div>
+                <div class="tag-title">QA 常见问题</div>
+            </div>
+            <div class="link" onclick="showPopup(1)">
+                <span class="link-text">Q1：氚是什么？氚有什么特性</span>
+            </div>
+            <div class="link" onclick="showPopup(2)">
+                <span class="link-text">Q2：如何检测海水中的氚含量？</span>
+            </div>
+            <div class="link" onclick="showPopup(3)">
+                <span class="link-text">Q3：氚会在人体中吗？氚对人体有什么影响？</span>
+            </div>
+            <div class="link" onclick="showPopup(4)">
+                <span class="link-text">Q4：如何检测生物体中的氚含量？</span>
+            </div>
+            <div class="link" onclick="showPopup(5)">
+                <span class="link-text">Q5：为什么不能连续自动监测海水中的氚？</span>
+            </div>
+            <div class="link" onclick="showPopup(6)">
+                <span class="link-text">Q6：含氚废水排放后会不会污染食盐，需要不需要及早囤货？</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container56">
+    <div class="container5">
+        <div id="chart1" style="width: 430px; height: 320px;"></div>
+    </div>
+    <div class="container6">
+        <div id="chart2" style="width: 430px; height: 320px;"></div>
+    </div>
+</div>
+
+<script src="OceanEnvironment/SeawaterMonitoring/SeawaterMonitoring.js"></script>
+<script>
+    function redirectToExternalLink() {
+        window.location.href = "http://www.wocean.xyz/";
+    }
+</script>
+</body>
+</html>

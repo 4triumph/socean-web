@@ -1,0 +1,225 @@
+html,body {
+	padding: 0;
+	width: 100%;
+}
+h1,ul,li,p {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+.background {
+	background: url("PlinOcean.jpg") no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+.menu-wrap {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	height: auto;
+	width: 350px;
+}
+
+.menu {
+	position: absolute;
+	display: block;
+	width: 700px;
+	height: 800px;
+	top: 100px;
+	left: -350px;
+	overflow: hidden;
+	transform-origin: 50% 50%;
+	transition: transform .2s;
+}
+.menu:before {
+	content: "";
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	top: 250px;
+	left: 230px;
+	/*margin: -40px 0 0 -40px;*/
+	background-color: #014F9C;
+	z-index: 3;
+	border-radius: 50%;
+	border: 3px solid rgb(6, 66, 148);
+	box-sizing: border-box;
+}
+
+.menu .item {
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	bottom: 50%;
+	left: 50%;
+	transform-origin: 0% 100%;
+	overflow: hidden;
+}
+.menu .item-inner {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 260px;
+	height: 260px;
+	background-color: #EEF7FC;
+	/*background-color: rgba(238, 247, 252, 0.5);*/
+	transform-origin: 0% 100%;
+	border: 3px solid rgb(6, 66, 148);
+	display: flex;
+	text-decoration: none;
+	font-size: 18px;
+	line-height: 0;
+	color: #014F9C;
+	overflow: hidden;
+	/*border-radius: 50%;*/
+	/*border-radius: 80% 50% 50% 0;*//*花*/
+	/*border-radius: 8000px 3000px 2000px 0;
+	/*border-radius: 15000px 4000px 5000px 0;
+	/*border-radius: 180% 60% 80% 0;*//*尖点*/
+	/*border-radius: 350% 150% 100% 0;*/
+	/*border-radius: 125% 50% 50% 0;*/
+	border-radius: 150% 100% 50% 0;/*圆润*/
+
+}
+.menu .item.on .item-inner {
+	color: #fff;
+	background-color: #438ed5;
+	font-weight: bold;
+}
+.menu .txt {
+	position: absolute;
+	font-size: 23px;
+	transform-origin: 0% 100%;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: auto;
+	text-align: center;
+	/*padding-left: 60px;*/
+	padding-left: 120px;
+
+}
+
+.content {
+	padding-left: 380px;
+	padding-right: 300px;
+	overflow: auto;
+}
+.sec {
+	background-color: rgba(255, 255, 255, 0.8);
+	width: 100%;
+	/*height: 700px;*/
+	margin-bottom: 350px;
+	margin-top: 200px;
+	border-radius: 40px;
+
+}
+.sec-head {
+	margin: 0;
+	padding: 10px;
+	text-align: center;
+	color: rgba(11, 97, 150, 0.84);
+	font-size: 40px;
+	border-top-left-radius: 40px;
+	border-top-right-radius: 40px;
+}
+.sec-body{
+	font-size: 16px;
+}
+
+
+.sec-body p {
+	color: #fff;
+	line-height: 1.4;
+
+}
+.sec-body p + p {
+	margin-top: 10px;
+}
+.button-menu {
+	position: fixed;
+	right: 0;
+	top: 40%;
+	transform: translateY(-40%);
+	background-color: rgba(0, 157, 255, 0.84);
+	padding: 10px;
+	border-bottom-left-radius: 50px;
+	border-top-left-radius: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 150px;
+	height: 830px;
+	border: 2px solid transparent; /* 添加透明的虚线边框 */
+	outline: 6px dotted rgb(255, 255, 255); /* 使用波浪线边框 */
+	outline-offset: 8px; /* 设置虚线边框与实际边框的距离 */
+}
+
+.menu-divider {
+	width: 80%;
+	height: 8px;
+	background-color: rgb(255, 255, 255);
+	margin: -5px auto; /* 调整按钮和分隔线之间的间距为 5px */
+	border: none;
+	border-radius: 20px;
+}
+
+.button {
+	position: relative;
+	flex-direction: column;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 80px;
+	background-color: transparent;
+	color: #ffffff;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	cursor: pointer;
+	text-decoration: none;
+	border: none;
+	margin: 5px auto;
+}
+
+.button:hover {
+	color: #00528a;
+}
+
+.button:hover i {
+	color: #00528a;
+}
+.button:nth-child(1) {
+	height: 30px;
+	font-size: 30px;
+	margin-top: 80px;
+	margin-bottom: 30px;
+}
+
+.button:nth-child(2) {
+	height: 80px;
+	font-size: 30px;
+	margin-top: 10px;
+}
+
+.button:nth-child(3) {
+	height: 70px;
+	font-size: 30px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+}
+.button:nth-child(4) {
+	height: 70px;
+	font-size: 30px;
+	margin-top: 20px;
+}
